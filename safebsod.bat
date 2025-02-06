@@ -1,0 +1,6 @@
+@echo off
+echo Simulating Safe BSOD...
+timeout /t 2
+echo Triggering bugcheck...
+echo w | powercfg -h off
+start /wait cmd /c "echo Bugcheck initiating... && rundll32.exe kdcom.dll,ServiceRestart"
